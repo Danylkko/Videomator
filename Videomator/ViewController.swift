@@ -8,19 +8,21 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    @IBOutlet weak var imageView: NSImageView!
+    
+    private var blurer: BlurerWrapper?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard let pbPath = ResourcesManager.shared.pbURL?.path,
+                let tessPath = ResourcesManager.shared.tessURL?.path,
+              let imgPath = ResourcesManager.shared.testImgURL?.path else { return }
+        self.blurer = BlurerWrapper(pbPath, tessPath)
+        self.blurer?.load(imgPath)
+        self.blurer?.detect(0)
+        self.imageView.image = blurer?.buffer()
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
 
 }
 

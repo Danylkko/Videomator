@@ -7,13 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		973C63E7287AFF0600FA8091 /* eng.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 973C63E6287AFF0600FA8091 /* eng.traineddata */; };
+		973C63E9287B007E00FA8091 /* james-deane-drifting-s15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 973C63E8287B007E00FA8091 /* james-deane-drifting-s15.jpg */; };
+		973C63EC287B02C500FA8091 /* ResourcesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C63EB287B02C500FA8091 /* ResourcesManager.swift */; };
+		9751AA7E287993FF00901709 /* libCORE_API.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9751AA7D287993FE00901709 /* libCORE_API.dylib */; };
+		9751AA7F287993FF00901709 /* libCORE_API.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9751AA7D287993FE00901709 /* libCORE_API.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9751AA862879955600901709 /* BlurerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9751AA852879955600901709 /* BlurerWrapper.mm */; };
+		97AF78BA287AF07D00DA4AF0 /* frozen_east_text_detection.pb in Resources */ = {isa = PBXBuildFile; fileRef = 97AF78B9287AF07D00DA4AF0 /* frozen_east_text_detection.pb */; };
 		97EFA9FC2878BC7B00C90CA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA9FB2878BC7B00C90CA4 /* AppDelegate.swift */; };
 		97EFA9FE2878BC7B00C90CA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA9FD2878BC7B00C90CA4 /* ViewController.swift */; };
 		97EFAA002878BC8400C90CA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97EFA9FF2878BC8400C90CA4 /* Assets.xcassets */; };
 		97EFAA032878BC8400C90CA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EFAA012878BC8400C90CA4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9751AA80287993FF00901709 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9751AA7F287993FF00901709 /* libCORE_API.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		973C63E6287AFF0600FA8091 /* eng.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.traineddata; sourceTree = "<group>"; };
+		973C63E8287B007E00FA8091 /* james-deane-drifting-s15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "james-deane-drifting-s15.jpg"; sourceTree = "<group>"; };
+		973C63EB287B02C500FA8091 /* ResourcesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesManager.swift; sourceTree = "<group>"; };
+		9751AA7D287993FE00901709 /* libCORE_API.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCORE_API.dylib; path = final_core/build/src/lib/libCORE_API.dylib; sourceTree = "<group>"; };
+		9751AA81287994FF00901709 /* Videomator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Videomator-Bridging-Header.h"; sourceTree = "<group>"; };
+		9751AA842879955600901709 /* BlurerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurerWrapper.h; sourceTree = "<group>"; };
+		9751AA852879955600901709 /* BlurerWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BlurerWrapper.mm; sourceTree = "<group>"; };
+		97AF78B9287AF07D00DA4AF0 /* frozen_east_text_detection.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = frozen_east_text_detection.pb; sourceTree = "<group>"; };
 		97EFA9F82878BC7B00C90CA4 /* Videomator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Videomator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EFA9FB2878BC7B00C90CA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97EFA9FD2878BC7B00C90CA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,17 +56,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9751AA7E287993FF00901709 /* libCORE_API.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		973C63EA287B014000FA8091 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				973C63E8287B007E00FA8091 /* james-deane-drifting-s15.jpg */,
+				973C63E6287AFF0600FA8091 /* eng.traineddata */,
+				97AF78B9287AF07D00DA4AF0 /* frozen_east_text_detection.pb */,
+			);
+			name = res;
+			sourceTree = "<group>";
+		};
+		9751AA7C287993FD00901709 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9751AA7D287993FE00901709 /* libCORE_API.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9751AA872879992A00901709 /* Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				9751AA852879955600901709 /* BlurerWrapper.mm */,
+				9751AA842879955600901709 /* BlurerWrapper.h */,
+			);
+			path = Wrapper;
+			sourceTree = "<group>";
+		};
 		97EFA9EF2878BC7B00C90CA4 = {
 			isa = PBXGroup;
 			children = (
 				97EFA9FA2878BC7B00C90CA4 /* Videomator */,
 				97EFA9F92878BC7B00C90CA4 /* Products */,
+				9751AA7C287993FD00901709 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,11 +110,15 @@
 		97EFA9FA2878BC7B00C90CA4 /* Videomator */ = {
 			isa = PBXGroup;
 			children = (
+				973C63EA287B014000FA8091 /* res */,
+				9751AA872879992A00901709 /* Wrapper */,
 				97EFA9FB2878BC7B00C90CA4 /* AppDelegate.swift */,
 				97EFA9FD2878BC7B00C90CA4 /* ViewController.swift */,
 				97EFA9FF2878BC8400C90CA4 /* Assets.xcassets */,
 				97EFAA012878BC8400C90CA4 /* Main.storyboard */,
 				97EFAA042878BC8400C90CA4 /* Videomator.entitlements */,
+				9751AA81287994FF00901709 /* Videomator-Bridging-Header.h */,
+				973C63EB287B02C500FA8091 /* ResourcesManager.swift */,
 			);
 			path = Videomator;
 			sourceTree = "<group>";
@@ -71,6 +133,7 @@
 				97EFA9F42878BC7B00C90CA4 /* Sources */,
 				97EFA9F52878BC7B00C90CA4 /* Frameworks */,
 				97EFA9F62878BC7B00C90CA4 /* Resources */,
+				9751AA80287993FF00901709 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -93,6 +156,7 @@
 				TargetAttributes = {
 					97EFA9F72878BC7B00C90CA4 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -119,8 +183,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				973C63E7287AFF0600FA8091 /* eng.traineddata in Resources */,
 				97EFAA002878BC8400C90CA4 /* Assets.xcassets in Resources */,
 				97EFAA032878BC8400C90CA4 /* Main.storyboard in Resources */,
+				97AF78BA287AF07D00DA4AF0 /* frozen_east_text_detection.pb in Resources */,
+				973C63E9287B007E00FA8091 /* james-deane-drifting-s15.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,8 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9751AA862879955600901709 /* BlurerWrapper.mm in Sources */,
 				97EFA9FE2878BC7B00C90CA4 /* ViewController.swift in Sources */,
 				97EFA9FC2878BC7B00C90CA4 /* AppDelegate.swift in Sources */,
+				973C63EC287B02C500FA8091 /* ResourcesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +225,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -184,9 +253,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -216,7 +286,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -244,9 +314,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -268,11 +339,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Videomator/Videomator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/final_core/src";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -280,10 +355,16 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/final_core/build/src/lib",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.litvinchuk.Videomator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Videomator/Videomator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -293,11 +374,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Videomator/Videomator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/final_core/src";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -305,10 +390,15 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/final_core/build/src/lib",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.litvinchuk.Videomator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Videomator/Videomator-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
