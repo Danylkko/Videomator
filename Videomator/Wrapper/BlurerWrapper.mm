@@ -14,7 +14,8 @@
 
 @implementation BlurerWrapper
 
-- (instancetype)init:(NSString *) netPath :(NSString *)tesseractPath {
+/// takes path to .pb file and .traineddata file
+- (instancetype)init:(NSString *)netPath :(NSString *)tesseractPath {
     self = [super init];
     
     if (self != nil) {
@@ -26,15 +27,18 @@
     return self;
 }
 
+/// path to video
 - (void)load:(NSString *)filepath {
     _blurer->load([filepath UTF8String]);
 }
 
+/// detect and blur text
 - (void)detect:(NSInteger)detectionMode {
     _blurer->start_render(core_api::Blurer::detection_mode::all);
     _blurer->create_stream(0); // index of start frame
 }
 
+/// get results
 - (NSImage *)buffer {
     core_api::image_data data = _blurer->stream_buffer();
     const int bytesPerRow = data.width * 3;

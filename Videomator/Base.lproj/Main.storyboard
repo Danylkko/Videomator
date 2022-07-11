@@ -701,28 +701,78 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Videomator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Videomator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ar2-Ze-gu3">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="JPd-PD-BGa"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Cl1-5k-2cx">
+                                <rect key="frame" x="90" y="60" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="AnL-xI-OEt"/>
+                                    <constraint firstAttribute="height" constant="150" id="Kr6-Xw-EKX"/>
+                                </constraints>
+                            </customView>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-I8-OfU">
+                                <rect key="frame" x="174" y="230" width="132" height="20"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-Or-cxY">
+                                        <rect key="frame" x="0.0" y="4" width="55" height="16"/>
+                                        <buttonCell key="cell" type="bevel" title="Open" bezelStyle="rounded" image="folder" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="HaZ-Oj-rna" customClass="MyNSButtonCell" customModule="Videomator" customModuleProvider="target">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openVideo:" target="XfG-lQ-9wD" id="8il-ti-UMr"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u5t-u4-cfg">
+                                        <rect key="frame" x="73" y="4" width="59" height="17"/>
+                                        <buttonCell key="cell" type="bevel" title="Export" bezelStyle="rounded" image="square.and.arrow.up" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="GAD-6T-hbM" customClass="MyNSButtonCell" customModule="Videomator" customModuleProvider="target">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="wkY-3W-XZN"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-on-RAs">
+                                <rect key="frame" x="18" y="14" width="444" height="28"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Gf9-ti-cEh" customClass="MyNSSliderCell" customModule="Videomator" customModuleProvider="target"/>
+                            </slider>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-Qd-pS9">
+                                <rect key="frame" x="20" y="202" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="pIr-P1-CJv"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ar2-Ze-gu3" secondAttribute="bottom" id="5f3-fC-a0W"/>
-                            <constraint firstItem="ar2-Ze-gu3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="6Ig-7v-ZNt"/>
-                            <constraint firstItem="ar2-Ze-gu3" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="UlO-b8-kOL"/>
-                            <constraint firstAttribute="trailing" secondItem="ar2-Ze-gu3" secondAttribute="trailing" id="arJ-k6-SBp"/>
+                            <constraint firstAttribute="trailing" secondItem="JcC-on-RAs" secondAttribute="trailing" constant="20" symbolic="YES" id="2EW-aq-WMz"/>
+                            <constraint firstItem="Cl1-5k-2cx" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="OXU-Tm-0ud"/>
+                            <constraint firstAttribute="bottom" secondItem="JcC-on-RAs" secondAttribute="bottom" constant="20" symbolic="YES" id="SC9-7g-pJ5"/>
+                            <constraint firstItem="JcC-on-RAs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="bUX-Yi-YuH"/>
+                            <constraint firstItem="KwR-I8-OfU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="jAT-c1-eKd"/>
+                            <constraint firstItem="Cl1-5k-2cx" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="kns-h8-avM"/>
+                            <constraint firstItem="KwR-I8-OfU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="yCT-kd-UuJ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="ar2-Ze-gu3" id="cpQ-NQ-gpK"/>
+                        <outlet property="imageView" destination="W8j-Qd-pS9" id="U26-IE-lMP"/>
+                        <outlet property="sliderCell" destination="Gf9-ti-cEh" id="vdQ-OP-UXi"/>
+                        <outlet property="videoContainer" destination="Cl1-5k-2cx" id="N6Q-wB-IzP"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -730,4 +780,8 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="folder" catalog="system" width="18" height="14"/>
+        <image name="square.and.arrow.up" catalog="system" width="15" height="17"/>
+    </resources>
 </document>
