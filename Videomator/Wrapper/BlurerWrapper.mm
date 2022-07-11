@@ -14,8 +14,7 @@
 
 @implementation BlurerWrapper
 
-/// takes path to .pb file and .traineddata file
-- (instancetype)init:(NSString *)netPath :(NSString *)tesseractPath {
+- (instancetype) init:(NSString *)netPath :(NSString *)tesseractPath {
     self = [super init];
     
     if (self != nil) {
@@ -27,19 +26,38 @@
     return self;
 }
 
-/// path to video
-- (void)load:(NSString *)filepath {
+- (void) load:(NSString *)filepath {
     _blurer->load([filepath UTF8String]);
 }
 
-/// detect and blur text
-- (void)detect:(NSInteger)detectionMode {
-    _blurer->start_render(core_api::Blurer::detection_mode::all);
-    _blurer->create_stream(0); // index of start frame
+- (NSInteger) getFps {
+    NSInteger fps = _blurer->get_fps();
+    return fps;
 }
 
-/// get results
-- (NSImage *)buffer {
+- (NSInteger) getFrameCount {
+    NSInteger frameCount = _blurer->get_fps();
+    return frameCount;
+}
+
+- (void) startRender {
+    _blurer->start_render();
+}
+
+- (void) createStream {
+    _blurer->create_stream();
+}
+
+- (void) playStream: (NSInteger *) fps {
+    int videoFps = (int)(*fps > 0) ? (int)*fps : _blurer->get_fps();
+    _blurer->play_stream(videoFps);
+}
+
+- (void) pauseStream {
+    _blurer->pause_stream();
+}
+
+- (NSImage *) streamBuffer {
     core_api::image_data data = _blurer->stream_buffer();
     const int bytesPerRow = data.width * 3;
     const unsigned int channels = 3;
@@ -62,5 +80,7 @@
     return image;
 }
 
-
+- (void) saveRendered:(NSString *)filepath {
+    _blurer->save_rendered([filepath UTF8String]);
+}
 @end

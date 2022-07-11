@@ -13,10 +13,10 @@
 		9751AA7E287993FF00901709 /* libCORE_API.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9751AA7D287993FE00901709 /* libCORE_API.dylib */; };
 		9751AA7F287993FF00901709 /* libCORE_API.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9751AA7D287993FE00901709 /* libCORE_API.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9751AA862879955600901709 /* BlurerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9751AA852879955600901709 /* BlurerWrapper.mm */; };
+		97879462287C8A6400EF9CE9 /* frozen_east_text_detection.pb in Resources */ = {isa = PBXBuildFile; fileRef = 97879461287C8A6400EF9CE9 /* frozen_east_text_detection.pb */; };
 		97929E60287B418600EDE975 /* MyNSButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E5E287B418600EDE975 /* MyNSButtonCell.swift */; };
 		97929E61287B418600EDE975 /* MyNSTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E5F287B418600EDE975 /* MyNSTextFieldCell.swift */; };
 		97929E63287B47D600EDE975 /* MyNSSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E62287B47D600EDE975 /* MyNSSliderCell.swift */; };
-		97AF78BA287AF07D00DA4AF0 /* frozen_east_text_detection.pb in Resources */ = {isa = PBXBuildFile; fileRef = 97AF78B9287AF07D00DA4AF0 /* frozen_east_text_detection.pb */; };
 		97EFA9FC2878BC7B00C90CA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA9FB2878BC7B00C90CA4 /* AppDelegate.swift */; };
 		97EFA9FE2878BC7B00C90CA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA9FD2878BC7B00C90CA4 /* MainViewController.swift */; };
 		97EFAA002878BC8400C90CA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97EFA9FF2878BC8400C90CA4 /* Assets.xcassets */; };
@@ -45,10 +45,10 @@
 		9751AA81287994FF00901709 /* Videomator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Videomator-Bridging-Header.h"; sourceTree = "<group>"; };
 		9751AA842879955600901709 /* BlurerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurerWrapper.h; sourceTree = "<group>"; };
 		9751AA852879955600901709 /* BlurerWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BlurerWrapper.mm; sourceTree = "<group>"; };
+		97879461287C8A6400EF9CE9 /* frozen_east_text_detection.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = frozen_east_text_detection.pb; sourceTree = "<group>"; };
 		97929E5E287B418600EDE975 /* MyNSButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNSButtonCell.swift; sourceTree = "<group>"; };
 		97929E5F287B418600EDE975 /* MyNSTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNSTextFieldCell.swift; sourceTree = "<group>"; };
 		97929E62287B47D600EDE975 /* MyNSSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNSSliderCell.swift; sourceTree = "<group>"; };
-		97AF78B9287AF07D00DA4AF0 /* frozen_east_text_detection.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = frozen_east_text_detection.pb; sourceTree = "<group>"; };
 		97EFA9F82878BC7B00C90CA4 /* Videomator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Videomator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EFA9FB2878BC7B00C90CA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97EFA9FD2878BC7B00C90CA4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -72,9 +72,9 @@
 		973C63EA287B014000FA8091 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				97879461287C8A6400EF9CE9 /* frozen_east_text_detection.pb */,
 				973C63E8287B007E00FA8091 /* james-deane-drifting-s15.jpg */,
 				973C63E6287AFF0600FA8091 /* eng.traineddata */,
-				97AF78B9287AF07D00DA4AF0 /* frozen_east_text_detection.pb */,
 			);
 			name = res;
 			sourceTree = "<group>";
@@ -202,8 +202,8 @@
 			files = (
 				973C63E7287AFF0600FA8091 /* eng.traineddata in Resources */,
 				97EFAA002878BC8400C90CA4 /* Assets.xcassets in Resources */,
+				97879462287C8A6400EF9CE9 /* frozen_east_text_detection.pb in Resources */,
 				97EFAA032878BC8400C90CA4 /* Main.storyboard in Resources */,
-				97AF78BA287AF07D00DA4AF0 /* frozen_east_text_detection.pb in Resources */,
 				973C63E9287B007E00FA8091 /* james-deane-drifting-s15.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

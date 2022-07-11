@@ -8,13 +8,15 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface BlurerWrapper : NSObject
-- (instancetype)init:(NSString *) pbPath :(NSString *) tesseractPath;
-- (void)load: (NSString *) filepath;
-- (void)detect: (NSInteger) detectionMode;
-- (NSImage *) buffer;
+- (instancetype) init:(NSString *) pbPath :(NSString *) tesseractPath;
+- (void) load: (NSString *) filepath;
+- (NSInteger) getFps;
+- (NSInteger) getFrameCount;
+- (void) startRender;
+- (void) createStream;
+- (void) playStream: (NSInteger *) fps;
+- (void) pauseStream;
+- (NSImage *) streamBuffer;
+- (void) saveRendered: (NSString *) filepath;
 @end
-
-NS_ASSUME_NONNULL_END

@@ -24,13 +24,13 @@ class MainViewController: NSViewController {
     //MARK: - Inherited
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.player = AVPlayer(url: MainViewController.url)
-        self.playerLayer = AVPlayerLayer(player: self.player)
-        self.playerLayer.videoGravity = .resizeAspect
-        
-        self.videoContainer.layer = self.playerLayer
-        self.videoContainer.wantsLayer = true
-        self.player.play()
+//        self.player = AVPlayer(url: MainViewController.url)
+//        self.playerLayer = AVPlayerLayer(player: self.player)
+//        self.playerLayer.videoGravity = .resizeAspect
+//
+//        self.videoContainer.layer = self.playerLayer
+//        self.videoContainer.wantsLayer = true
+//        self.player.play()
         self.sliderCell.doubleValue = 0.0
         self.sliderCell.isEnabled = false
         self.sliderCell.completionHandler = {
@@ -41,7 +41,7 @@ class MainViewController: NSViewController {
     
     override func viewDidLayout() {
         super.viewDidLayout()
-        self.playerLayer.frame = self.videoContainer.frame
+//        self.playerLayer.frame = self.videoContainer.frame
     }
     
     @IBAction private func openVideo(_ sender: Any) {
@@ -54,7 +54,9 @@ class MainViewController: NSViewController {
                       let _ = ResourcesManager.shared.testImgURL?.path else { return }
                 self.blurer = BlurerWrapper(pbPath, tessPath)
                 self.blurer?.load(url.path)
-                self.blurer?.detect(0)
+                
+//                print("fps: ", self.blurer?.getFps())
+//                self.blurer?.detect(0)
             }
         }
     }
