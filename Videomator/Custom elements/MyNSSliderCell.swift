@@ -11,7 +11,9 @@ import AVFoundation
 
 class MyNSSliderCell: NSSliderCell {
     
+    //MARK: - Properties
     private var pattern = [NSImage]()
+    public var completionHandler: (() -> Void)?
     public var videoURL: URL? {
         didSet {
             Task(priority: .userInitiated) {
@@ -23,11 +25,18 @@ class MyNSSliderCell: NSSliderCell {
         self.controlView!.frame.width / self.controlView!.frame.height
     }
     
+    //MARK: - Initializers
+    override init() {
+        super.init()
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     //MARK: - Inherited functions
     override func draw(withFrame cellFrame: NSRect, in controlView: NSView) {
-        if self.pattern.isEmpty {
-            NSColor.magenta.setStroke()
-        } else {
+        if let _ = self.videoURL, CGFloat(self.pattern.count) >= self.requiredNumberOfCaptures {
             let path = NSBezierPath()
             for (index, elem) in self.pattern.enumerated() {
                 let diff = cellFrame.width / CGFloat(self.pattern.count)
@@ -44,6 +53,7 @@ class MyNSSliderCell: NSSliderCell {
     override func drawKnob(_ knobRect: NSRect) {
         let path = NSBezierPath(roundedRect: knobRect, xRadius: 4, yRadius: 4)
         NSColor.white.withAlphaComponent(0.8).set()
+//        path.lineWidth = 5
         path.fill()
     }
     
@@ -65,10 +75,7 @@ class MyNSSliderCell: NSSliderCell {
         generator.generateCGImagesAsynchronously(forTimes: times) { _, image, _, result, _ in
             let newImage = NSImage(cgImage: image!, size: .zero)
             DispatchQueue.main.async {
-                self.setPatterns(
-                    with: newImage,
-                    requiredAmount: times.count
-                )
+                self.setPatterns(with: newImage)
                 print(self.pattern.count)
             }
         }
@@ -97,10 +104,13 @@ class MyNSSliderCell: NSSliderCell {
         return times
     }
     
-    public func setPatterns(with pattern: NSImage, requiredAmount: Int) {
+    public func setPatterns(with pattern: NSImage) {
         self.pattern.append(pattern)
-        if self.pattern.count == requiredAmount {
+        if CGFloat(self.pattern.count) >= self.requiredNumberOfCaptures {
             self.controlView?.layoutSubtreeIfNeeded()
+            if let completionHandler = self.completionHandler {
+                completionHandler()
+            }
         }
     }
     

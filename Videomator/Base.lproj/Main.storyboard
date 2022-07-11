@@ -770,7 +770,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="W8j-Qd-pS9" id="U26-IE-lMP"/>
                         <outlet property="sliderCell" destination="Gf9-ti-cEh" id="vdQ-OP-UXi"/>
                         <outlet property="videoContainer" destination="Cl1-5k-2cx" id="N6Q-wB-IzP"/>
                     </connections>

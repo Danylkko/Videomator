@@ -10,19 +10,18 @@ import AVKit
 import AVFoundation
 
 class MainViewController: NSViewController {
-    
-    //    @IBOutlet weak var imageView: NSImageView!
-    
+
+    //MARK: - IBOutlets
     @IBOutlet weak private var videoContainer: NSView!
     @IBOutlet weak private var sliderCell: MyNSSliderCell!
-    @IBOutlet weak var imageView: NSImageView!
     
+    //MARK: - Other properties
     private var player: AVPlayer!
     private var playerLayer: AVPlayerLayer!
     private static let url = URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!
-    
     private var blurer: BlurerWrapper?
     
+    //MARK: - Inherited
     override func viewDidLoad() {
         super.viewDidLoad()
         self.player = AVPlayer(url: MainViewController.url)
@@ -32,56 +31,13 @@ class MainViewController: NSViewController {
         self.videoContainer.layer = self.playerLayer
         self.videoContainer.wantsLayer = true
         self.player.play()
-        self.sliderCell.videoURL = MainViewController.url
+        self.sliderCell.doubleValue = 0.0
         self.sliderCell.isEnabled = false
-//        Task {
-//            await self.getPreviews(url: MainViewController.url)
-//        }
+        self.sliderCell.completionHandler = {
+            self.sliderCell.isEnabled = true
+        }
+        self.sliderCell.videoURL = MainViewController.url
     }
-    
-//    private func getPreviews(url: URL) async {
-//        let asset = AVURLAsset(url: url)
-//        let generator = AVAssetImageGenerator(asset: asset)
-//        generator.maximumSize = CGSize(
-//            width: self.sliderCell.controlView!.frame.height * 2,
-//            height: self.sliderCell.controlView!.frame.height
-//        )
-//        
-//        let times = self.getTimeCodes()
-//        
-//        generator.generateCGImagesAsynchronously(forTimes: times) { _, image, _, result, _ in
-//            let newImage = NSImage(cgImage: image!, size: .zero)
-//            DispatchQueue.main.async {
-//                self.sliderCell.setPatterns(
-//                    with: newImage,
-//                    requiredAmount: times.count
-//                )
-//                print(self.sliderCell.pattern.count)
-//            }
-//        }
-//    }
-    
-//    private func getTimeCodes() -> [NSValue] {
-//        let asset = AVURLAsset(url: MainViewController.url)
-//        let numberOfFrames = self.sliderCell.controlView!.frame.width / self.sliderCell.controlView!.frame.height
-//        let duration = CMTimeGetSeconds(asset.duration)
-//        var times = [NSValue]()
-//        var k: Double = 0
-//        
-//        if numberOfFrames < duration {
-//            k = duration / numberOfFrames
-//        } else {
-//            k = numberOfFrames / duration
-//        }
-//        
-//        var sum = 0.0
-//        while sum < duration {
-//            let time = sum
-//            times.append(time as NSValue)
-//            sum += k
-//        }
-//        return times
-//    }
     
     override func viewDidLayout() {
         super.viewDidLayout()
@@ -99,7 +55,6 @@ class MainViewController: NSViewController {
                 self.blurer = BlurerWrapper(pbPath, tessPath)
                 self.blurer?.load(url.path)
                 self.blurer?.detect(0)
-                self.imageView.image = self.blurer?.buffer()
             }
         }
     }
