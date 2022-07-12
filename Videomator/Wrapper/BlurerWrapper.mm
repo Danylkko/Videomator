@@ -48,8 +48,8 @@
     _blurer->create_stream();
 }
 
-- (void) playStream: (NSInteger *) fps {
-    int videoFps = (int)(*fps > 0) ? (int)*fps : _blurer->get_fps();
+- (void) playStream: (NSInteger) fps {
+    int videoFps = (int)(fps > 0) ? (int)fps : _blurer->get_fps();
     _blurer->play_stream(videoFps);
 }
 
@@ -59,6 +59,9 @@
 
 - (NSImage *) streamBuffer {
     core_api::image_data data = _blurer->stream_buffer();
+    if (data.data == nullptr) {
+        return NULL;
+    }
     const int bytesPerRow = data.width * 3;
     const unsigned int channels = 3;
     

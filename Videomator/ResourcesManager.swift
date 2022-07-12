@@ -7,21 +7,21 @@
 
 import Foundation
 
-struct ResourcesManager {
+public struct ResourcesManager {
     
     public static let shared = ResourcesManager()
     
-    let mainBundle = Bundle.main
+    private let mainBundle = Bundle.main
     
-    var pbURL: URL? {
+    public var pbURL: URL? {
         self.mainBundle.url(forResource: "frozen_east_text_detection", withExtension: "pb")
     }
     
-    var tessURL: URL? {
+    public var tessURL: URL? {
         self.mainBundle.resourceURL
     }
     
-    var testImgURL: URL? {
+    public var testImgURL: URL? {
         self.mainBundle.url(forResource: "james-deane-drifting-s15", withExtension: "jpg")
     }
     

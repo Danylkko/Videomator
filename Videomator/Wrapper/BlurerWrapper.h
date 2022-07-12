@@ -15,7 +15,7 @@
 - (NSInteger) getFrameCount;
 - (void) startRender;
 - (void) createStream;
-- (void) playStream: (NSInteger *) fps;
+- (void) playStream: (NSInteger) fps;
 - (void) pauseStream;
 - (NSImage *) streamBuffer;
 - (void) saveRendered: (NSString *) filepath;

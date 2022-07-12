@@ -14,6 +14,7 @@
 		9751AA7F287993FF00901709 /* libCORE_API.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9751AA7D287993FE00901709 /* libCORE_API.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9751AA862879955600901709 /* BlurerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9751AA852879955600901709 /* BlurerWrapper.mm */; };
 		97879462287C8A6400EF9CE9 /* frozen_east_text_detection.pb in Resources */ = {isa = PBXBuildFile; fileRef = 97879461287C8A6400EF9CE9 /* frozen_east_text_detection.pb */; };
+		97879464287CA3E300EF9CE9 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97879463287CA3E300EF9CE9 /* VideoManager.swift */; };
 		97929E60287B418600EDE975 /* MyNSButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E5E287B418600EDE975 /* MyNSButtonCell.swift */; };
 		97929E61287B418600EDE975 /* MyNSTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E5F287B418600EDE975 /* MyNSTextFieldCell.swift */; };
 		97929E63287B47D600EDE975 /* MyNSSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E62287B47D600EDE975 /* MyNSSliderCell.swift */; };
@@ -46,6 +47,7 @@
 		9751AA842879955600901709 /* BlurerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurerWrapper.h; sourceTree = "<group>"; };
 		9751AA852879955600901709 /* BlurerWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BlurerWrapper.mm; sourceTree = "<group>"; };
 		97879461287C8A6400EF9CE9 /* frozen_east_text_detection.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = frozen_east_text_detection.pb; sourceTree = "<group>"; };
+		97879463287CA3E300EF9CE9 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 		97929E5E287B418600EDE975 /* MyNSButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNSButtonCell.swift; sourceTree = "<group>"; };
 		97929E5F287B418600EDE975 /* MyNSTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNSTextFieldCell.swift; sourceTree = "<group>"; };
 		97929E62287B47D600EDE975 /* MyNSSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNSSliderCell.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				97EFAA042878BC8400C90CA4 /* Videomator.entitlements */,
 				9751AA81287994FF00901709 /* Videomator-Bridging-Header.h */,
 				973C63EB287B02C500FA8091 /* ResourcesManager.swift */,
+				97879463287CA3E300EF9CE9 /* VideoManager.swift */,
 			);
 			path = Videomator;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				973C63EC287B02C500FA8091 /* ResourcesManager.swift in Sources */,
 				97929E60287B418600EDE975 /* MyNSButtonCell.swift in Sources */,
 				97929E63287B47D600EDE975 /* MyNSSliderCell.swift in Sources */,
+				97879464287CA3E300EF9CE9 /* VideoManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

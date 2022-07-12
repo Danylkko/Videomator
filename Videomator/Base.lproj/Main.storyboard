@@ -706,18 +706,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Videomator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="316"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Cl1-5k-2cx">
-                                <rect key="frame" x="90" y="60" width="300" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="AnL-xI-OEt"/>
-                                    <constraint firstAttribute="height" constant="150" id="Kr6-Xw-EKX"/>
-                                </constraints>
-                            </customView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-I8-OfU">
-                                <rect key="frame" x="174" y="230" width="132" height="20"/>
+                                <rect key="frame" x="174" y="276" width="132" height="20"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-Or-cxY">
                                         <rect key="frame" x="0.0" y="4" width="55" height="16"/>
@@ -753,25 +746,32 @@
                                 <rect key="frame" x="18" y="14" width="444" height="28"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Gf9-ti-cEh" customClass="MyNSSliderCell" customModule="Videomator" customModuleProvider="target"/>
                             </slider>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-Qd-pS9">
-                                <rect key="frame" x="20" y="202" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-Qd-pS9">
+                                <rect key="frame" x="20" y="48" width="440" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W8j-Qd-pS9" secondAttribute="height" multiplier="18/9" id="7Kd-Xj-Lqd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="440" id="cAj-Lt-kP6"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="174" id="oj2-Ck-T0s"/>
+                                </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="pIr-P1-CJv"/>
                             </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="JcC-on-RAs" secondAttribute="trailing" constant="20" symbolic="YES" id="2EW-aq-WMz"/>
-                            <constraint firstItem="Cl1-5k-2cx" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="OXU-Tm-0ud"/>
+                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="top" secondItem="KwR-I8-OfU" secondAttribute="bottom" constant="8" symbolic="YES" id="4NZ-dF-Eei"/>
+                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="AsB-60-23m"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W8j-Qd-pS9" secondAttribute="trailing" constant="20" symbolic="YES" id="LaU-b3-Q4s"/>
+                            <constraint firstItem="JcC-on-RAs" firstAttribute="top" secondItem="W8j-Qd-pS9" secondAttribute="bottom" constant="8" symbolic="YES" id="M7s-Zf-klN"/>
+                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Qrh-Bk-H5T"/>
                             <constraint firstAttribute="bottom" secondItem="JcC-on-RAs" secondAttribute="bottom" constant="20" symbolic="YES" id="SC9-7g-pJ5"/>
                             <constraint firstItem="JcC-on-RAs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="bUX-Yi-YuH"/>
                             <constraint firstItem="KwR-I8-OfU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="jAT-c1-eKd"/>
-                            <constraint firstItem="Cl1-5k-2cx" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="kns-h8-avM"/>
                             <constraint firstItem="KwR-I8-OfU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="yCT-kd-UuJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="W8j-Qd-pS9" id="rz7-79-krT"/>
                         <outlet property="sliderCell" destination="Gf9-ti-cEh" id="vdQ-OP-UXi"/>
-                        <outlet property="videoContainer" destination="Cl1-5k-2cx" id="N6Q-wB-IzP"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

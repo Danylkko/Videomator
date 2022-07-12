@@ -89,7 +89,7 @@ class MyNSSliderCell: NSSliderCell {
         var times = [NSValue]()
         var k: Double = 0
         
-        if numberOfFrames < duration {
+        if numberOfFrames > duration {
             k = duration / numberOfFrames
         } else {
             k = numberOfFrames / duration
