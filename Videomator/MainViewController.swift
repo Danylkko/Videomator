@@ -16,10 +16,7 @@ class MainViewController: NSViewController {
     @IBOutlet private weak var sliderCell: MyNSSliderCell!
     
     //MARK: - Other properties
-    //    private var player: AVPlayer!
-    //    private var playerLayer: AVPlayerLayer!
     private var manager: VideoManager?
-    private static let url = URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!
     private var blurer: BlurerWrapper?
     
     //MARK: - Inherited
@@ -28,10 +25,12 @@ class MainViewController: NSViewController {
     }
     
     private func configureUI(for video: URL) {
-        //        let layer = CALayer()
-        //        layer.backgroundColor = NSColor.green.cgColor
-        //        self.imageView.wantsLayer = true
-        //        self.imageView.layer = layer
+        let layer = CALayer()
+        layer.contentsGravity = .resizeAspectFill
+        layer.backgroundColor = NSColor.blue.cgColor
+        self.imageView.wantsLayer = true
+        self.imageView.layer = layer
+        
         self.sliderCell.doubleValue = 0.0
         self.sliderCell.isEnabled = false
         self.sliderCell.completionHandler = {
@@ -44,11 +43,6 @@ class MainViewController: NSViewController {
     @IBAction private func openVideo(_ sender: Any) {
         let openPanel = NSOpenPanel()
         
-        let layer = CALayer()
-        layer.contentsGravity = .resizeAspectFill
-        self.imageView.wantsLayer = true
-        self.imageView.layer = layer
-        
         openPanel.begin { result in
             if result == .OK, let url = openPanel.url {
                 self.configureUI(for: url)
@@ -60,6 +54,17 @@ class MainViewController: NSViewController {
                 }
             }
         }
+    }
+    
+    @IBAction func export(_ sender: Any) {
+        let openPanel = NSOpenPanel()
+        openPanel.canChooseDirectories = true
+        openPanel.begin { result in
+            if result == .OK, let url = openPanel.url {
+                self.manager?.saveRendered(in: url, as: "blurred.mp4")
+            }
+        }
+        
     }
     
 }

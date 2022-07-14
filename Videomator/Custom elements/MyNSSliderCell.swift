@@ -68,7 +68,7 @@ class MyNSSliderCell: NSSliderCell {
         let asset = AVURLAsset(url: url)
         let generator = AVAssetImageGenerator(asset: asset)
         generator.maximumSize = CGSize(
-            width: self.controlView!.frame.height * 2,
+            width: self.controlView!.frame.width,
             height: self.controlView!.frame.height
         )
         

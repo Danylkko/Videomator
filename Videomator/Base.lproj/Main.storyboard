@@ -705,12 +705,11 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Videomator" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="316"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-I8-OfU">
-                                <rect key="frame" x="174" y="276" width="132" height="20"/>
+                                <rect key="frame" x="434" y="560" width="132" height="20"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-Or-cxY">
                                         <rect key="frame" x="0.0" y="4" width="55" height="16"/>
@@ -728,6 +727,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="export:" target="XfG-lQ-9wD" id="Ots-iV-8tz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -743,29 +745,34 @@
                                 </customSpacing>
                             </stackView>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-on-RAs">
-                                <rect key="frame" x="18" y="14" width="444" height="28"/>
+                                <rect key="frame" x="98" y="14" width="804" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="800" id="tHK-Xk-Qu9"/>
+                                </constraints>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Gf9-ti-cEh" customClass="MyNSSliderCell" customModule="Videomator" customModuleProvider="target"/>
                             </slider>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-Qd-pS9">
-                                <rect key="frame" x="20" y="48" width="440" height="220"/>
+                                <rect key="frame" x="50" y="75" width="900" height="450"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="W8j-Qd-pS9" secondAttribute="height" multiplier="18/9" id="7Kd-Xj-Lqd"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="440" id="cAj-Lt-kP6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="900" id="cAj-Lt-kP6"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="174" id="oj2-Ck-T0s"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="pIr-P1-CJv"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="JcC-on-RAs" secondAttribute="trailing" constant="20" symbolic="YES" id="2EW-aq-WMz"/>
-                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="top" secondItem="KwR-I8-OfU" secondAttribute="bottom" constant="8" symbolic="YES" id="4NZ-dF-Eei"/>
+                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KwR-I8-OfU" secondAttribute="bottom" constant="8" symbolic="YES" id="4NZ-dF-Eei"/>
                             <constraint firstItem="W8j-Qd-pS9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="AsB-60-23m"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W8j-Qd-pS9" secondAttribute="trailing" constant="20" symbolic="YES" id="LaU-b3-Q4s"/>
-                            <constraint firstItem="JcC-on-RAs" firstAttribute="top" secondItem="W8j-Qd-pS9" secondAttribute="bottom" constant="8" symbolic="YES" id="M7s-Zf-klN"/>
+                            <constraint firstItem="JcC-on-RAs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="W8j-Qd-pS9" secondAttribute="bottom" constant="8" symbolic="YES" id="M7s-Zf-klN"/>
                             <constraint firstItem="W8j-Qd-pS9" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Qrh-Bk-H5T"/>
                             <constraint firstAttribute="bottom" secondItem="JcC-on-RAs" secondAttribute="bottom" constant="20" symbolic="YES" id="SC9-7g-pJ5"/>
-                            <constraint firstItem="JcC-on-RAs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="bUX-Yi-YuH"/>
+                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="XtU-LJ-L0r"/>
+                            <constraint firstAttribute="width" constant="1000" id="d7X-2n-jvs"/>
+                            <constraint firstItem="JcC-on-RAs" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="iuj-wI-0TL"/>
                             <constraint firstItem="KwR-I8-OfU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="jAT-c1-eKd"/>
+                            <constraint firstAttribute="height" constant="600" id="wGS-8E-VwW"/>
                             <constraint firstItem="KwR-I8-OfU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="yCT-kd-UuJ"/>
                         </constraints>
                     </view>
@@ -776,7 +783,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="924"/>
         </scene>
     </scenes>
     <resources>

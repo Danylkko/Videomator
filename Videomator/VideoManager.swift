@@ -39,9 +39,9 @@ public class VideoManager {
             while self.rendered.count < self.blurer.getFrameCount() {
                 if let image = self.buffer() {
                     self.rendered.append(image)
-                    print("\(self.rendered.count) frames of \(self.framesCount)")
+                    print("\(self.rendered.count) frames of \(self.framesCount), fps: \(self.fps)")
                 }
-                try await Task.sleep(nanoseconds: UInt64((200_000_000_000 / self.fps)))
+                try await Task.sleep(nanoseconds: UInt64((1_000_000_000 / self.fps)))
                 //400_000_000_000 for large video
             }
             self.blurer.pauseStream()
@@ -52,12 +52,14 @@ public class VideoManager {
     
     public func play(imageSet: [NSImage], onUpdate: @escaping (NSImage) -> Void) {
         Task(priority: .userInitiated) {
+            self.blurer.createStream()
+            self.blurer.playStream(0)
             while true {
                 for image in imageSet {
                     DispatchQueue.main.async {
                         onUpdate(image)
                     }
-                    try await Task.sleep(nanoseconds: UInt64((2_000_000_000 / self.fps)))
+                    try await Task.sleep(nanoseconds: UInt64((1_000_000_000 / self.fps)))
                 }
             }
         }
