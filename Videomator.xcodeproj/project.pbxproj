@@ -98,6 +98,22 @@
 			path = Wrapper;
 			sourceTree = "<group>";
 		};
+		97879465287CFE1900EF9CE9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				973C63EB287B02C500FA8091 /* ResourcesManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		97879466287CFE2B00EF9CE9 /* VideoManagers */ = {
+			isa = PBXGroup;
+			children = (
+				97879463287CA3E300EF9CE9 /* VideoManager.swift */,
+			);
+			name = VideoManagers;
+			sourceTree = "<group>";
+		};
 		97929E5D287B418600EDE975 /* Custom elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +144,8 @@
 		97EFA9FA2878BC7B00C90CA4 /* Videomator */ = {
 			isa = PBXGroup;
 			children = (
+				97879466287CFE2B00EF9CE9 /* VideoManagers */,
+				97879465287CFE1900EF9CE9 /* Managers */,
 				97929E5D287B418600EDE975 /* Custom elements */,
 				973C63EA287B014000FA8091 /* res */,
 				9751AA872879992A00901709 /* Wrapper */,
@@ -137,8 +155,6 @@
 				97EFAA012878BC8400C90CA4 /* Main.storyboard */,
 				97EFAA042878BC8400C90CA4 /* Videomator.entitlements */,
 				9751AA81287994FF00901709 /* Videomator-Bridging-Header.h */,
-				973C63EB287B02C500FA8091 /* ResourcesManager.swift */,
-				97879463287CA3E300EF9CE9 /* VideoManager.swift */,
 			);
 			path = Videomator;
 			sourceTree = "<group>";

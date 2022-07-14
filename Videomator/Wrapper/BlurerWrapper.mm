@@ -36,7 +36,7 @@
 }
 
 - (NSInteger) getFrameCount {
-    NSInteger frameCount = _blurer->get_fps();
+    NSInteger frameCount = _blurer->get_frame_count();
     return frameCount;
 }
 
