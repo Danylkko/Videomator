@@ -22,22 +22,21 @@ class MainViewController: NSViewController {
     //MARK: - Inherited
     override func viewDidLoad() {
         super.viewDidLoad()
+        let layer = CALayer()
+        self.view.wantsLayer = true
+        self.view.layer = layer
     }
     
-    private func configureUI(for video: URL) {
+    private func configureUI(for url: URL, onComplete: @escaping () -> Void) {
         let layer = CALayer()
         layer.contentsGravity = .resizeAspectFill
-        layer.backgroundColor = NSColor.blue.cgColor
         self.imageView.wantsLayer = true
         self.imageView.layer = layer
-        
+        self.sliderCell.setShadow()
         self.sliderCell.doubleValue = 0.0
         self.sliderCell.isEnabled = false
-        self.sliderCell.completionHandler = {
-            self.sliderCell.isEnabled = true
-            self.manager = VideoManager(videoURL: video)
-        }
-        self.sliderCell.videoURL = video
+        self.sliderCell.completionHandler = onComplete
+        self.sliderCell.videoURL = url
     }
     
     @IBAction private func openVideo(_ sender: Any) {
@@ -45,12 +44,9 @@ class MainViewController: NSViewController {
         
         openPanel.begin { result in
             if result == .OK, let url = openPanel.url {
-                self.configureUI(for: url)
-                self.manager = VideoManager(videoURL: url)
-                self.manager?.render { images in
-                    self.manager?.play(imageSet: images) { image in
-                        self.imageView.layer?.contents = image
-                    }
+                self.configureUI(for: url) {
+                    self.sliderCell.isEnabled = true
+                    self.manager = VideoManager(videoURL: url)
                 }
             }
         }

@@ -13,6 +13,7 @@ class MyNSSliderCell: NSSliderCell {
     
     //MARK: - Properties
     private var pattern = [NSImage]()
+    private let lineWidth: CGFloat = 8
     public var completionHandler: (() -> Void)?
     public var videoURL: URL? {
         didSet {
@@ -49,11 +50,14 @@ class MyNSSliderCell: NSSliderCell {
         }
         super.draw(withFrame: cellFrame, in: controlView)
     }
-
+    
     override func drawKnob(_ knobRect: NSRect) {
-        let path = NSBezierPath(roundedRect: knobRect, xRadius: 4, yRadius: 4)
-        NSColor.white.withAlphaComponent(0.8).set()
-//        path.lineWidth = 5
+        let rect = NSRect(x: knobRect.midX - self.lineWidth,
+                          y: knobRect.origin.y,
+                          width: self.lineWidth,
+                          height: knobRect.height)
+        let path = NSBezierPath(roundedRect: rect, xRadius: 4, yRadius: 4)
+        NSColor.white.withAlphaComponent(1).set()
         path.fill()
     }
     
@@ -116,9 +120,20 @@ class MyNSSliderCell: NSSliderCell {
     
     private func getNextCapture(for image: NSImage, in rect: NSRect) -> NSBezierPath {
         let path = NSBezierPath(rect: rect)
-        NSColor(patternImage: image).set()
+        NSColor(patternImage: image).setFill()
         path.fill()
         return path
     }
     
+}
+
+extension MyNSSliderCell {
+    public func setShadow() {
+        self.controlView?.shadow = NSShadow()
+        self.controlView?.layer?.cornerRadius = 5.0
+        self.controlView?.layer?.shadowOpacity = 1.0
+        self.controlView?.layer?.shadowColor = NSColor.black.cgColor
+        self.controlView?.layer?.shadowOffset = NSMakeSize(0, 0)
+        self.controlView?.layer?.shadowRadius = 20
+    }
 }

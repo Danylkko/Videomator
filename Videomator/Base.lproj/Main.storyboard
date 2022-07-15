@@ -708,6 +708,9 @@
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                         <subviews>
+                            <visualEffectView blendingMode="withinWindow" material="dark" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="iSJ-3q-Gh4">
+                                <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
+                            </visualEffectView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-I8-OfU">
                                 <rect key="frame" x="434" y="560" width="132" height="20"/>
                                 <subviews>
@@ -745,8 +748,9 @@
                                 </customSpacing>
                             </stackView>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-on-RAs">
-                                <rect key="frame" x="98" y="14" width="804" height="28"/>
+                                <rect key="frame" x="98" y="14" width="804" height="48"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5fY-qY-fk7"/>
                                     <constraint firstAttribute="width" constant="800" id="tHK-Xk-Qu9"/>
                                 </constraints>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Gf9-ti-cEh" customClass="MyNSSliderCell" customModule="Videomator" customModuleProvider="target"/>
@@ -763,13 +767,17 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="W8j-Qd-pS9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KwR-I8-OfU" secondAttribute="bottom" constant="8" symbolic="YES" id="4NZ-dF-Eei"/>
+                            <constraint firstAttribute="bottom" secondItem="iSJ-3q-Gh4" secondAttribute="bottom" id="7fv-2z-dMB"/>
                             <constraint firstItem="W8j-Qd-pS9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="AsB-60-23m"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W8j-Qd-pS9" secondAttribute="trailing" constant="20" symbolic="YES" id="LaU-b3-Q4s"/>
                             <constraint firstItem="JcC-on-RAs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="W8j-Qd-pS9" secondAttribute="bottom" constant="8" symbolic="YES" id="M7s-Zf-klN"/>
                             <constraint firstItem="W8j-Qd-pS9" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Qrh-Bk-H5T"/>
                             <constraint firstAttribute="bottom" secondItem="JcC-on-RAs" secondAttribute="bottom" constant="20" symbolic="YES" id="SC9-7g-pJ5"/>
+                            <constraint firstAttribute="trailing" secondItem="iSJ-3q-Gh4" secondAttribute="trailing" id="UHt-no-Vg8"/>
                             <constraint firstItem="W8j-Qd-pS9" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="XtU-LJ-L0r"/>
+                            <constraint firstItem="iSJ-3q-Gh4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="aEe-20-IP8"/>
                             <constraint firstAttribute="width" constant="1000" id="d7X-2n-jvs"/>
+                            <constraint firstItem="iSJ-3q-Gh4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="gCe-Mb-tvf"/>
                             <constraint firstItem="JcC-on-RAs" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="iuj-wI-0TL"/>
                             <constraint firstItem="KwR-I8-OfU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="jAT-c1-eKd"/>
                             <constraint firstAttribute="height" constant="600" id="wGS-8E-VwW"/>
