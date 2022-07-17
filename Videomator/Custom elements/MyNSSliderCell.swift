@@ -17,6 +17,7 @@ class MyNSSliderCell: NSSliderCell {
     public var completionHandler: (() -> Void)?
     public var videoURL: URL? {
         didSet {
+            self.pattern = [NSImage]()
             Task(priority: .userInitiated) {
                 await self.setPreviews()
             }
@@ -67,7 +68,7 @@ class MyNSSliderCell: NSSliderCell {
     
     //MARK: - Supporting func
     private func setPreviews() async {
-        guard let url = videoURL, let times = self.getTimeCodes() else { return }
+        guard let url = videoURL, let times = TimingManager.getTimeCodes(for: url, amount: self.requiredNumberOfCaptures) else { return }
         
         let asset = AVURLAsset(url: url)
         let generator = AVAssetImageGenerator(asset: asset)
@@ -80,38 +81,13 @@ class MyNSSliderCell: NSSliderCell {
             let newImage = NSImage(cgImage: image!, size: .zero)
             DispatchQueue.main.async {
                 self.setPatterns(with: newImage)
-                print(self.pattern.count)
             }
         }
-    }
-    
-    private func getTimeCodes() -> [NSValue]? {
-        guard let url = self.videoURL else { return nil }
-        let asset = AVURLAsset(url: url)
-        let numberOfFrames = self.requiredNumberOfCaptures
-        let duration = CMTimeGetSeconds(asset.duration)
-        var times = [NSValue]()
-        var k: Double = 0
-        
-        if numberOfFrames > duration {
-            k = duration / numberOfFrames
-        } else {
-            k = numberOfFrames / duration
-        }
-        
-        var sum = 0.0
-        while sum < duration {
-            let time = sum
-            times.append(time as NSValue)
-            sum += k
-        }
-        return times
     }
     
     public func setPatterns(with pattern: NSImage) {
         self.pattern.append(pattern)
         if CGFloat(self.pattern.count) >= self.requiredNumberOfCaptures {
-            self.controlView?.layoutSubtreeIfNeeded()
             if let completionHandler = self.completionHandler {
                 completionHandler()
             }

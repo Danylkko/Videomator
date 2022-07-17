@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AC6F538FA1B142E2FCE0351 /* Pods_Videomator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9B7650DA986D97E01986CB /* Pods_Videomator.framework */; };
+		973C441C28846EB700DF1A03 /* TimingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C441B28846EB600DF1A03 /* TimingManager.swift */; };
+		973C441E28849B1100DF1A03 /* frozen_inference_graph.pb in Resources */ = {isa = PBXBuildFile; fileRef = 973C441D28849B1100DF1A03 /* frozen_inference_graph.pb */; };
+		973C442028849B2000DF1A03 /* frozen_inference.pbtxt in Resources */ = {isa = PBXBuildFile; fileRef = 973C441F28849B2000DF1A03 /* frozen_inference.pbtxt */; };
 		973C63E7287AFF0600FA8091 /* eng.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 973C63E6287AFF0600FA8091 /* eng.traineddata */; };
 		973C63E9287B007E00FA8091 /* james-deane-drifting-s15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 973C63E8287B007E00FA8091 /* james-deane-drifting-s15.jpg */; };
 		973C63EC287B02C500FA8091 /* ResourcesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C63EB287B02C500FA8091 /* ResourcesManager.swift */; };
 		9751AA7E287993FF00901709 /* libCORE_API.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9751AA7D287993FE00901709 /* libCORE_API.dylib */; };
 		9751AA7F287993FF00901709 /* libCORE_API.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 9751AA7D287993FE00901709 /* libCORE_API.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9751AA862879955600901709 /* BlurerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9751AA852879955600901709 /* BlurerWrapper.mm */; };
-		97879462287C8A6400EF9CE9 /* frozen_east_text_detection.pb in Resources */ = {isa = PBXBuildFile; fileRef = 97879461287C8A6400EF9CE9 /* frozen_east_text_detection.pb */; };
 		97879464287CA3E300EF9CE9 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97879463287CA3E300EF9CE9 /* VideoManager.swift */; };
 		97929E60287B418600EDE975 /* MyNSButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E5E287B418600EDE975 /* MyNSButtonCell.swift */; };
 		97929E61287B418600EDE975 /* MyNSTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E5F287B418600EDE975 /* MyNSTextFieldCell.swift */; };
@@ -39,6 +42,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B47EB19C1563A53000E4A11 /* Pods-Videomator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videomator.debug.xcconfig"; path = "Target Support Files/Pods-Videomator/Pods-Videomator.debug.xcconfig"; sourceTree = "<group>"; };
+		4763B7EACF3C9FA6B175446A /* Pods-Videomator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videomator.release.xcconfig"; path = "Target Support Files/Pods-Videomator/Pods-Videomator.release.xcconfig"; sourceTree = "<group>"; };
+		973C441B28846EB600DF1A03 /* TimingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingManager.swift; sourceTree = "<group>"; };
+		973C441D28849B1100DF1A03 /* frozen_inference_graph.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = frozen_inference_graph.pb; sourceTree = "<group>"; };
+		973C441F28849B2000DF1A03 /* frozen_inference.pbtxt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = frozen_inference.pbtxt; sourceTree = "<group>"; };
 		973C63E6287AFF0600FA8091 /* eng.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.traineddata; sourceTree = "<group>"; };
 		973C63E8287B007E00FA8091 /* james-deane-drifting-s15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "james-deane-drifting-s15.jpg"; sourceTree = "<group>"; };
 		973C63EB287B02C500FA8091 /* ResourcesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesManager.swift; sourceTree = "<group>"; };
@@ -46,7 +54,6 @@
 		9751AA81287994FF00901709 /* Videomator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Videomator-Bridging-Header.h"; sourceTree = "<group>"; };
 		9751AA842879955600901709 /* BlurerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurerWrapper.h; sourceTree = "<group>"; };
 		9751AA852879955600901709 /* BlurerWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BlurerWrapper.mm; sourceTree = "<group>"; };
-		97879461287C8A6400EF9CE9 /* frozen_east_text_detection.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = frozen_east_text_detection.pb; sourceTree = "<group>"; };
 		97879463287CA3E300EF9CE9 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 		97929E5E287B418600EDE975 /* MyNSButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNSButtonCell.swift; sourceTree = "<group>"; };
 		97929E5F287B418600EDE975 /* MyNSTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNSTextFieldCell.swift; sourceTree = "<group>"; };
@@ -57,6 +64,7 @@
 		97EFA9FF2878BC8400C90CA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97EFAA022878BC8400C90CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97EFAA042878BC8400C90CA4 /* Videomator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Videomator.entitlements; sourceTree = "<group>"; };
+		CE9B7650DA986D97E01986CB /* Pods_Videomator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Videomator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,16 +73,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				9751AA7E287993FF00901709 /* libCORE_API.dylib in Frameworks */,
+				0AC6F538FA1B142E2FCE0351 /* Pods_Videomator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61A92B035EB52C8EF5831CBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B47EB19C1563A53000E4A11 /* Pods-Videomator.debug.xcconfig */,
+				4763B7EACF3C9FA6B175446A /* Pods-Videomator.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		973C63EA287B014000FA8091 /* res */ = {
 			isa = PBXGroup;
 			children = (
-				97879461287C8A6400EF9CE9 /* frozen_east_text_detection.pb */,
+				973C441F28849B2000DF1A03 /* frozen_inference.pbtxt */,
+				973C441D28849B1100DF1A03 /* frozen_inference_graph.pb */,
 				973C63E8287B007E00FA8091 /* james-deane-drifting-s15.jpg */,
 				973C63E6287AFF0600FA8091 /* eng.traineddata */,
 			);
@@ -85,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9751AA7D287993FE00901709 /* libCORE_API.dylib */,
+				CE9B7650DA986D97E01986CB /* Pods_Videomator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				97879463287CA3E300EF9CE9 /* VideoManager.swift */,
+				973C441B28846EB600DF1A03 /* TimingManager.swift */,
 			);
 			name = VideoManagers;
 			sourceTree = "<group>";
@@ -130,6 +151,7 @@
 				97EFA9FA2878BC7B00C90CA4 /* Videomator */,
 				97EFA9F92878BC7B00C90CA4 /* Products */,
 				9751AA7C287993FD00901709 /* Frameworks */,
+				61A92B035EB52C8EF5831CBE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,10 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97EFAA072878BC8400C90CA4 /* Build configuration list for PBXNativeTarget "Videomator" */;
 			buildPhases = (
+				E466A84921551190F9952ECD /* [CP] Check Pods Manifest.lock */,
 				97EFA9F42878BC7B00C90CA4 /* Sources */,
 				97EFA9F52878BC7B00C90CA4 /* Frameworks */,
 				97EFA9F62878BC7B00C90CA4 /* Resources */,
 				9751AA80287993FF00901709 /* Embed Libraries */,
+				7ECD671BBC518BE3CC4B25A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,13 +245,56 @@
 			files = (
 				973C63E7287AFF0600FA8091 /* eng.traineddata in Resources */,
 				97EFAA002878BC8400C90CA4 /* Assets.xcassets in Resources */,
-				97879462287C8A6400EF9CE9 /* frozen_east_text_detection.pb in Resources */,
+				973C442028849B2000DF1A03 /* frozen_inference.pbtxt in Resources */,
 				97EFAA032878BC8400C90CA4 /* Main.storyboard in Resources */,
+				973C441E28849B1100DF1A03 /* frozen_inference_graph.pb in Resources */,
 				973C63E9287B007E00FA8091 /* james-deane-drifting-s15.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7ECD671BBC518BE3CC4B25A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Videomator/Pods-Videomator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Videomator/Pods-Videomator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Videomator/Pods-Videomator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E466A84921551190F9952ECD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Videomator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97EFA9F42878BC7B00C90CA4 /* Sources */ = {
@@ -241,6 +308,7 @@
 				973C63EC287B02C500FA8091 /* ResourcesManager.swift in Sources */,
 				97929E60287B418600EDE975 /* MyNSButtonCell.swift in Sources */,
 				97929E63287B47D600EDE975 /* MyNSSliderCell.swift in Sources */,
+				973C441C28846EB700DF1A03 /* TimingManager.swift in Sources */,
 				97879464287CA3E300EF9CE9 /* VideoManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +444,7 @@
 		};
 		97EFAA082878BC8400C90CA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B47EB19C1563A53000E4A11 /* Pods-Videomator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -385,6 +454,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/final_core/src";
@@ -411,6 +481,7 @@
 		};
 		97EFAA092878BC8400C90CA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4763B7EACF3C9FA6B175446A /* Pods-Videomator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -420,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/final_core/src";

@@ -705,31 +705,34 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Videomator" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
+                    <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <visualEffectView blendingMode="withinWindow" material="dark" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="iSJ-3q-Gh4">
+                            <visualEffectView blendingMode="withinWindow" material="dark" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="iSJ-3q-Gh4">
                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                             </visualEffectView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-I8-OfU">
-                                <rect key="frame" x="434" y="560" width="132" height="20"/>
+                                <rect key="frame" x="436" y="560" width="129" height="20"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-Or-cxY">
-                                        <rect key="frame" x="0.0" y="4" width="55" height="16"/>
-                                        <buttonCell key="cell" type="bevel" title="Open" bezelStyle="rounded" image="folder" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="HaZ-Oj-rna" customClass="MyNSButtonCell" customModule="Videomator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="4" width="52" height="16"/>
+                                        <buttonCell key="cell" type="bevel" title="Open" bezelStyle="rounded" image="square.and.arrow.down" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="HaZ-Oj-rna" customClass="MyNSButtonCell" customModule="Videomator" customModuleProvider="target">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <color key="contentTintColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <connections>
                                             <action selector="openVideo:" target="XfG-lQ-9wD" id="8il-ti-UMr"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u5t-u4-cfg">
-                                        <rect key="frame" x="73" y="4" width="59" height="17"/>
+                                        <rect key="frame" x="70" y="4" width="59" height="17"/>
                                         <buttonCell key="cell" type="bevel" title="Export" bezelStyle="rounded" image="square.and.arrow.up" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="GAD-6T-hbM" customClass="MyNSButtonCell" customModule="Videomator" customModuleProvider="target">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <color key="contentTintColor" name="selectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                         <connections>
                                             <action selector="export:" target="XfG-lQ-9wD" id="Ots-iV-8tz"/>
                                         </connections>
@@ -771,22 +774,23 @@
                             <constraint firstItem="W8j-Qd-pS9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="AsB-60-23m"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W8j-Qd-pS9" secondAttribute="trailing" constant="20" symbolic="YES" id="LaU-b3-Q4s"/>
                             <constraint firstItem="JcC-on-RAs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="W8j-Qd-pS9" secondAttribute="bottom" constant="8" symbolic="YES" id="M7s-Zf-klN"/>
+                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="height" secondItem="iSJ-3q-Gh4" secondAttribute="height" multiplier="0.75" id="O4C-Lq-O4a"/>
                             <constraint firstItem="W8j-Qd-pS9" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Qrh-Bk-H5T"/>
                             <constraint firstAttribute="bottom" secondItem="JcC-on-RAs" secondAttribute="bottom" constant="20" symbolic="YES" id="SC9-7g-pJ5"/>
                             <constraint firstAttribute="trailing" secondItem="iSJ-3q-Gh4" secondAttribute="trailing" id="UHt-no-Vg8"/>
                             <constraint firstItem="W8j-Qd-pS9" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="XtU-LJ-L0r"/>
                             <constraint firstItem="iSJ-3q-Gh4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="aEe-20-IP8"/>
-                            <constraint firstAttribute="width" constant="1000" id="d7X-2n-jvs"/>
                             <constraint firstItem="iSJ-3q-Gh4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="gCe-Mb-tvf"/>
                             <constraint firstItem="JcC-on-RAs" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="iuj-wI-0TL"/>
                             <constraint firstItem="KwR-I8-OfU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="jAT-c1-eKd"/>
-                            <constraint firstAttribute="height" constant="600" id="wGS-8E-VwW"/>
                             <constraint firstItem="KwR-I8-OfU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="yCT-kd-UuJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundEffect" destination="iSJ-3q-Gh4" id="PDG-4R-d0b"/>
                         <outlet property="imageView" destination="W8j-Qd-pS9" id="rz7-79-krT"/>
                         <outlet property="sliderCell" destination="Gf9-ti-cEh" id="vdQ-OP-UXi"/>
+                        <outlet property="timelineSlider" destination="JcC-on-RAs" id="fgr-XP-FM4"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -795,7 +799,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder" catalog="system" width="18" height="14"/>
+        <image name="square.and.arrow.down" catalog="system" width="15" height="16"/>
         <image name="square.and.arrow.up" catalog="system" width="15" height="17"/>
     </resources>
 </document>

@@ -14,7 +14,11 @@ public struct ResourcesManager {
     private let mainBundle = Bundle.main
     
     public var pbURL: URL? {
-        self.mainBundle.url(forResource: "frozen_east_text_detection", withExtension: "pb")
+        self.mainBundle.url(forResource: "frozen_inference_graph", withExtension: "pb")
+    }
+    
+    public var pbTxtURL: URL? {
+        self.mainBundle.url(forResource: "frozen_inference", withExtension: "pbtxt")
     }
     
     public var tessURL: URL? {

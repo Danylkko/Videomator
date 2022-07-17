@@ -14,12 +14,12 @@
 
 @implementation BlurerWrapper
 
-- (instancetype) init:(NSString *)netPath :(NSString *)tesseractPath {
+- (instancetype) init:(NSString *) pbPath :(NSString *) pbTxtPath :(NSString *) tessPath {
     self = [super init];
     
     if (self != nil) {
         _blurer = new core_api::Blurer();
-        _blurer->init([netPath UTF8String], [tesseractPath UTF8String]);
+        _blurer->init([pbPath UTF8String], [pbTxtPath UTF8String], [tessPath UTF8String]);
     }
     
     NSLog(@"initialized");
@@ -44,8 +44,12 @@
     _blurer->start_render();
 }
 
-- (void) createStream {
-    _blurer->create_stream();
+- (BOOL) doneRendering {
+    return _blurer->done_rendering();
+}
+
+- (void) createStream: (NSInteger) frameIndex {
+    _blurer->create_stream((int)frameIndex);
 }
 
 - (void) playStream: (NSInteger) fps {
@@ -58,15 +62,25 @@
 }
 
 - (NSImage *) streamBuffer {
-    core_api::image_data data = _blurer->stream_buffer();
+    core_api::image_data data = _blurer->stream_buffer_preview();
     if (data.data == nullptr) {
         return NULL;
     }
+    
+    int len = (data.width - 1) * data.height * 3 + (data.height - 1) * 3 + (3 - 1);
+    char * byteArray = new char[len];
+    for (size_t i = 0; i < len; i += 3)
+    {
+        byteArray[i] = data.data[i + 2];
+        byteArray[i + 1] = data.data[i + 1];
+        byteArray[i + 2] = data.data[i];
+    }
+    
     const int bytesPerRow = data.width * 3;
     const unsigned int channels = 3;
     
     NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc]
-                                initWithBitmapDataPlanes:(unsigned char **)&data.data
+                                initWithBitmapDataPlanes:(unsigned char **)&byteArray
                                 pixelsWide:data.width
                                 pixelsHigh:data.height
                                 bitsPerSample:8

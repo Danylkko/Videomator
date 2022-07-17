@@ -9,12 +9,13 @@
 #import <AppKit/AppKit.h>
 
 @interface BlurerWrapper : NSObject
-- (instancetype) init:(NSString *) pbPath :(NSString *) tesseractPath;
+- (instancetype) init:(NSString *) pbPath :(NSString *) pbTxtPath :(NSString *) tessPath;
 - (void) load: (NSString *) filepath;
 - (NSInteger) getFps;
 - (NSInteger) getFrameCount;
 - (void) startRender;
-- (void) createStream;
+- (BOOL) doneRendering;
+- (void) createStream: (NSInteger)frameIndex;
 - (void) playStream: (NSInteger) fps;
 - (void) pauseStream;
 - (NSImage *) streamBuffer;

@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import AVFoundation
+import AVKit
 
 public class VideoManager {
     
     private var videoURL: URL
     private var blurer: BlurerWrapper
+    private lazy var asset = AVURLAsset(url: self.videoURL)
+    private lazy var generator = AVAssetImageGenerator(asset: self.asset)
     
     public var fps: Int {
         self.blurer.getFps()
@@ -23,55 +27,35 @@ public class VideoManager {
     public init(videoURL: URL) {
         self.videoURL = videoURL
         guard let pbPath = ResourcesManager.shared.pbURL?.path,
+              let pbTxtPath = ResourcesManager.shared.pbTxtURL?.path,
               let tessPath = ResourcesManager.shared.tessURL?.path else {
             fatalError("frozen_east_text_dection.pb or eng.traineddata not found")
         }
-        self.blurer = BlurerWrapper(pbPath, tessPath)
+        self.blurer = BlurerWrapper(pbPath, pbTxtPath, tessPath)
         self.blurer.load(videoURL.path)
+        self.generator.requestedTimeToleranceBefore = .zero
+        self.generator.requestedTimeToleranceAfter = .zero
         self.blurer.startRender()
     }
     
-    private var rendered = [NSImage]()
-    
-    public func render(onUpdate: @escaping ([NSImage]) -> Void) {
-        self.createStream()
-        Task(priority: .high) {
-            while self.rendered.count < self.blurer.getFrameCount() {
-                if let image = self.buffer() {
-                    self.rendered.append(image)
-                    print("\(self.rendered.count) frames of \(self.framesCount), fps: \(self.fps)")
-                }
-                try await Task.sleep(nanoseconds: UInt64((1_000_000_000 / self.fps)))
-                //400_000_000_000 for large video
-            }
-            self.blurer.pauseStream()
-            
-            onUpdate(self.rendered)
+    public func render(value: Double, onUpdate: @escaping (NSImage) -> Void) {
+        let frameIndex = Int(Float(value) * Float(self.blurer.getFrameCount()) / 100)
+        self.blurer.createStream(frameIndex)
+        print("stream start playing at frame: \(frameIndex)")
+        DispatchQueue.global(qos: .userInteractive).async {
+            guard let preview = self.blurer.streamBuffer() else { return }
+            onUpdate(preview)
         }
     }
     
-    public func play(imageSet: [NSImage], onUpdate: @escaping (NSImage) -> Void) {
-        Task(priority: .userInitiated) {
-            self.blurer.createStream()
-            self.blurer.playStream(0)
-            while true {
-                for image in imageSet {
-                    DispatchQueue.main.async {
-                        onUpdate(image)
-                    }
-                    try await Task.sleep(nanoseconds: UInt64((1_000_000_000 / self.fps)))
-                }
-            }
+    public func getImageForTime(value: Double, onComplete: @escaping (NSImage) -> Void) {
+        let timing = TimingManager.getTimingFor(currentValue: value, of: self.asset.duration.seconds)
+        self.generator.generateCGImagesAsynchronously(forTimes: timing)
+        { _, image, _, result, _ in
+            guard let cgImage = image else { return }
+            let frame = NSImage(cgImage: cgImage, size: .zero)
+            onComplete(frame)
         }
-    }
-    
-    public func createStream() {
-        self.blurer.createStream()
-        self.blurer.playStream(self.fps)
-    }
-    
-    public func buffer() -> NSImage? {
-        self.blurer.streamBuffer() ?? nil
     }
     
     public func saveRendered(in directory: URL, as name: String) {
