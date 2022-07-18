@@ -11,6 +11,9 @@
 		973C441C28846EB700DF1A03 /* TimingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C441B28846EB600DF1A03 /* TimingManager.swift */; };
 		973C441E28849B1100DF1A03 /* frozen_inference_graph.pb in Resources */ = {isa = PBXBuildFile; fileRef = 973C441D28849B1100DF1A03 /* frozen_inference_graph.pb */; };
 		973C442028849B2000DF1A03 /* frozen_inference.pbtxt in Resources */ = {isa = PBXBuildFile; fileRef = 973C441F28849B2000DF1A03 /* frozen_inference.pbtxt */; };
+		973C44222884E2CF00DF1A03 /* MyNSSliderCell+setShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C44212884E2CF00DF1A03 /* MyNSSliderCell+setShadow.swift */; };
+		973C44242884E30F00DF1A03 /* ImageView+setShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C44232884E30F00DF1A03 /* ImageView+setShadow.swift */; };
+		973C442628850D7D00DF1A03 /* MyNSTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C442528850D7D00DF1A03 /* MyNSTextFieldCell.swift */; };
 		973C63E7287AFF0600FA8091 /* eng.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 973C63E6287AFF0600FA8091 /* eng.traineddata */; };
 		973C63E9287B007E00FA8091 /* james-deane-drifting-s15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 973C63E8287B007E00FA8091 /* james-deane-drifting-s15.jpg */; };
 		973C63EC287B02C500FA8091 /* ResourcesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C63EB287B02C500FA8091 /* ResourcesManager.swift */; };
@@ -19,7 +22,6 @@
 		9751AA862879955600901709 /* BlurerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9751AA852879955600901709 /* BlurerWrapper.mm */; };
 		97879464287CA3E300EF9CE9 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97879463287CA3E300EF9CE9 /* VideoManager.swift */; };
 		97929E60287B418600EDE975 /* MyNSButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E5E287B418600EDE975 /* MyNSButtonCell.swift */; };
-		97929E61287B418600EDE975 /* MyNSTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E5F287B418600EDE975 /* MyNSTextFieldCell.swift */; };
 		97929E63287B47D600EDE975 /* MyNSSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97929E62287B47D600EDE975 /* MyNSSliderCell.swift */; };
 		97EFA9FC2878BC7B00C90CA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA9FB2878BC7B00C90CA4 /* AppDelegate.swift */; };
 		97EFA9FE2878BC7B00C90CA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFA9FD2878BC7B00C90CA4 /* MainViewController.swift */; };
@@ -47,6 +49,9 @@
 		973C441B28846EB600DF1A03 /* TimingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingManager.swift; sourceTree = "<group>"; };
 		973C441D28849B1100DF1A03 /* frozen_inference_graph.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = frozen_inference_graph.pb; sourceTree = "<group>"; };
 		973C441F28849B2000DF1A03 /* frozen_inference.pbtxt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = frozen_inference.pbtxt; sourceTree = "<group>"; };
+		973C44212884E2CF00DF1A03 /* MyNSSliderCell+setShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyNSSliderCell+setShadow.swift"; sourceTree = "<group>"; };
+		973C44232884E30F00DF1A03 /* ImageView+setShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+setShadow.swift"; sourceTree = "<group>"; };
+		973C442528850D7D00DF1A03 /* MyNSTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNSTextFieldCell.swift; sourceTree = "<group>"; };
 		973C63E6287AFF0600FA8091 /* eng.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.traineddata; sourceTree = "<group>"; };
 		973C63E8287B007E00FA8091 /* james-deane-drifting-s15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "james-deane-drifting-s15.jpg"; sourceTree = "<group>"; };
 		973C63EB287B02C500FA8091 /* ResourcesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesManager.swift; sourceTree = "<group>"; };
@@ -56,7 +61,6 @@
 		9751AA852879955600901709 /* BlurerWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BlurerWrapper.mm; sourceTree = "<group>"; };
 		97879463287CA3E300EF9CE9 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 		97929E5E287B418600EDE975 /* MyNSButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNSButtonCell.swift; sourceTree = "<group>"; };
-		97929E5F287B418600EDE975 /* MyNSTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNSTextFieldCell.swift; sourceTree = "<group>"; };
 		97929E62287B47D600EDE975 /* MyNSSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNSSliderCell.swift; sourceTree = "<group>"; };
 		97EFA9F82878BC7B00C90CA4 /* Videomator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Videomator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EFA9FB2878BC7B00C90CA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,8 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				97929E5E287B418600EDE975 /* MyNSButtonCell.swift */,
-				97929E5F287B418600EDE975 /* MyNSTextFieldCell.swift */,
 				97929E62287B47D600EDE975 /* MyNSSliderCell.swift */,
+				973C44212884E2CF00DF1A03 /* MyNSSliderCell+setShadow.swift */,
+				973C44232884E30F00DF1A03 /* ImageView+setShadow.swift */,
+				973C442528850D7D00DF1A03 /* MyNSTextFieldCell.swift */,
 			);
 			path = "Custom elements";
 			sourceTree = "<group>";
@@ -301,15 +307,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				973C44242884E30F00DF1A03 /* ImageView+setShadow.swift in Sources */,
 				9751AA862879955600901709 /* BlurerWrapper.mm in Sources */,
 				97EFA9FE2878BC7B00C90CA4 /* MainViewController.swift in Sources */,
-				97929E61287B418600EDE975 /* MyNSTextFieldCell.swift in Sources */,
+				973C44222884E2CF00DF1A03 /* MyNSSliderCell+setShadow.swift in Sources */,
 				97EFA9FC2878BC7B00C90CA4 /* AppDelegate.swift in Sources */,
 				973C63EC287B02C500FA8091 /* ResourcesManager.swift in Sources */,
 				97929E60287B418600EDE975 /* MyNSButtonCell.swift in Sources */,
 				97929E63287B47D600EDE975 /* MyNSSliderCell.swift in Sources */,
 				973C441C28846EB700DF1A03 /* TimingManager.swift in Sources */,
 				97879464287CA3E300EF9CE9 /* VideoManager.swift in Sources */,
+				973C442628850D7D00DF1A03 /* MyNSTextFieldCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

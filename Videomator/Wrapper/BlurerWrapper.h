@@ -14,6 +14,7 @@
 - (NSInteger) getFps;
 - (NSInteger) getFrameCount;
 - (void) startRender;
+- (float) numberOfRendered;
 - (BOOL) doneRendering;
 - (void) createStream: (NSInteger)frameIndex;
 - (void) playStream: (NSInteger) fps;

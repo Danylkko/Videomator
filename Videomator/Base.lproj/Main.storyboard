@@ -706,41 +706,118 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Videomator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1182" height="788"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <visualEffectView blendingMode="withinWindow" material="dark" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="iSJ-3q-Gh4">
-                                <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1182" height="788"/>
                             </visualEffectView>
-                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-I8-OfU">
-                                <rect key="frame" x="436" y="560" width="129" height="20"/>
+                            <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" spacing="25" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzm-hY-e6L">
+                                <rect key="frame" x="0.0" y="0.0" width="1182" height="788"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-Or-cxY">
-                                        <rect key="frame" x="0.0" y="4" width="52" height="16"/>
-                                        <buttonCell key="cell" type="bevel" title="Open" bezelStyle="rounded" image="square.and.arrow.down" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="HaZ-Oj-rna" customClass="MyNSButtonCell" customModule="Videomator" customModuleProvider="target">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-I8-OfU">
+                                        <rect key="frame" x="527" y="748" width="129" height="20"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-Or-cxY">
+                                                <rect key="frame" x="0.0" y="4" width="52" height="16"/>
+                                                <buttonCell key="cell" type="bevel" title="Open" bezelStyle="rounded" image="square.and.arrow.down" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="HaZ-Oj-rna" customClass="MyNSButtonCell" customModule="Videomator" customModuleProvider="target">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <color key="contentTintColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <connections>
+                                                    <action selector="openVideo:" target="XfG-lQ-9wD" id="8il-ti-UMr"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u5t-u4-cfg">
+                                                <rect key="frame" x="70" y="4" width="59" height="17"/>
+                                                <buttonCell key="cell" type="bevel" title="Export" bezelStyle="rounded" image="square.and.arrow.up" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="GAD-6T-hbM" customClass="MyNSButtonCell" customModule="Videomator" customModuleProvider="target">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <color key="contentTintColor" name="selectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <connections>
+                                                    <action selector="export:" target="XfG-lQ-9wD" id="Ots-iV-8tz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="wkY-3W-XZN"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxO-8L-h4e">
+                                        <rect key="frame" x="565" y="705" width="52" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Preview" id="CkX-8V-MMq">
                                             <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <color key="contentTintColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <connections>
-                                            <action selector="openVideo:" target="XfG-lQ-9wD" id="8il-ti-UMr"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u5t-u4-cfg">
-                                        <rect key="frame" x="70" y="4" width="59" height="17"/>
-                                        <buttonCell key="cell" type="bevel" title="Export" bezelStyle="rounded" image="square.and.arrow.up" catalog="system" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="GAD-6T-hbM" customClass="MyNSButtonCell" customModule="Videomator" customModuleProvider="target">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <color key="contentTintColor" name="selectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <connections>
-                                            <action selector="export:" target="XfG-lQ-9wD" id="Ots-iV-8tz"/>
-                                        </connections>
-                                    </button>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-Qd-pS9">
+                                        <rect key="frame" x="0.0" y="87" width="1182" height="591"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="W8j-Qd-pS9" secondAttribute="height" multiplier="18/9" id="7Kd-Xj-Lqd"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="900" id="cAj-Lt-kP6"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="pIr-P1-CJv"/>
+                                    </imageView>
+                                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-on-RAs">
+                                        <rect key="frame" x="189" y="14" width="804" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5fY-qY-fk7"/>
+                                            <constraint firstAttribute="width" constant="800" id="tHK-Xk-Qu9"/>
+                                        </constraints>
+                                        <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Gf9-ti-cEh" customClass="MyNSSliderCell" customModule="Videomator" customModuleProvider="target"/>
+                                    </slider>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="wkY-3W-XZN"/>
+                                    <constraint firstAttribute="bottom" secondItem="JcC-on-RAs" secondAttribute="bottom" constant="20" symbolic="YES" id="0z9-CB-uCn"/>
+                                    <constraint firstAttribute="bottom" secondItem="JcC-on-RAs" secondAttribute="bottom" constant="20" symbolic="YES" id="9KT-Qi-etZ"/>
+                                    <constraint firstItem="KwR-I8-OfU" firstAttribute="top" secondItem="bzm-hY-e6L" secondAttribute="top" constant="20" symbolic="YES" id="fck-Tc-MD4"/>
+                                    <constraint firstItem="W8j-Qd-pS9" firstAttribute="height" secondItem="bzm-hY-e6L" secondAttribute="height" multiplier="0.75" id="re2-nj-se3"/>
                                 </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <progressIndicator maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="dfK-mw-Kcn">
+                                <rect key="frame" x="575" y="378" width="32" height="32"/>
+                            </progressIndicator>
+                            <stackView distribution="fill" orientation="horizontal" alignment="bottom" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7md-sb-qx7">
+                                <rect key="frame" x="965" y="750" width="197" height="18"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t1O-gM-eVc">
+                                        <rect key="frame" x="-2" y="0.0" width="91" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="50% rendered" id="m0p-NX-c7b">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <progressIndicator maxValue="100" doubleValue="50" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="7LB-tg-yEZ">
+                                        <rect key="frame" x="97" y="-1" width="100" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="8Sg-ds-rbz"/>
+                                        </constraints>
+                                    </progressIndicator>
+                                </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
@@ -750,46 +827,30 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-on-RAs">
-                                <rect key="frame" x="98" y="14" width="804" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="5fY-qY-fk7"/>
-                                    <constraint firstAttribute="width" constant="800" id="tHK-Xk-Qu9"/>
-                                </constraints>
-                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Gf9-ti-cEh" customClass="MyNSSliderCell" customModule="Videomator" customModuleProvider="target"/>
-                            </slider>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-Qd-pS9">
-                                <rect key="frame" x="50" y="75" width="900" height="450"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="W8j-Qd-pS9" secondAttribute="height" multiplier="18/9" id="7Kd-Xj-Lqd"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="900" id="cAj-Lt-kP6"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="174" id="oj2-Ck-T0s"/>
-                                </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="pIr-P1-CJv"/>
-                            </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KwR-I8-OfU" secondAttribute="bottom" constant="8" symbolic="YES" id="4NZ-dF-Eei"/>
+                            <constraint firstItem="7md-sb-qx7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="71U-i1-oQt"/>
                             <constraint firstAttribute="bottom" secondItem="iSJ-3q-Gh4" secondAttribute="bottom" id="7fv-2z-dMB"/>
-                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="AsB-60-23m"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W8j-Qd-pS9" secondAttribute="trailing" constant="20" symbolic="YES" id="LaU-b3-Q4s"/>
-                            <constraint firstItem="JcC-on-RAs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="W8j-Qd-pS9" secondAttribute="bottom" constant="8" symbolic="YES" id="M7s-Zf-klN"/>
-                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="height" secondItem="iSJ-3q-Gh4" secondAttribute="height" multiplier="0.75" id="O4C-Lq-O4a"/>
-                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Qrh-Bk-H5T"/>
-                            <constraint firstAttribute="bottom" secondItem="JcC-on-RAs" secondAttribute="bottom" constant="20" symbolic="YES" id="SC9-7g-pJ5"/>
+                            <constraint firstItem="bzm-hY-e6L" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="8P9-aZ-nz4"/>
+                            <constraint firstItem="dfK-mw-Kcn" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="CVe-cc-quN"/>
                             <constraint firstAttribute="trailing" secondItem="iSJ-3q-Gh4" secondAttribute="trailing" id="UHt-no-Vg8"/>
-                            <constraint firstItem="W8j-Qd-pS9" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="XtU-LJ-L0r"/>
+                            <constraint firstAttribute="trailing" secondItem="bzm-hY-e6L" secondAttribute="trailing" id="YwR-ia-tgY"/>
                             <constraint firstItem="iSJ-3q-Gh4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="aEe-20-IP8"/>
+                            <constraint firstItem="bzm-hY-e6L" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="cfB-W4-J3K"/>
                             <constraint firstItem="iSJ-3q-Gh4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="gCe-Mb-tvf"/>
-                            <constraint firstItem="JcC-on-RAs" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="iuj-wI-0TL"/>
-                            <constraint firstItem="KwR-I8-OfU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="jAT-c1-eKd"/>
-                            <constraint firstItem="KwR-I8-OfU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="yCT-kd-UuJ"/>
+                            <constraint firstItem="dfK-mw-Kcn" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="iVA-rv-889"/>
+                            <constraint firstAttribute="bottom" secondItem="bzm-hY-e6L" secondAttribute="bottom" id="pVG-W1-uiS"/>
+                            <constraint firstAttribute="trailing" secondItem="7md-sb-qx7" secondAttribute="trailing" constant="20" symbolic="YES" id="yiw-sz-QFa"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundEffect" destination="iSJ-3q-Gh4" id="PDG-4R-d0b"/>
                         <outlet property="imageView" destination="W8j-Qd-pS9" id="rz7-79-krT"/>
+                        <outlet property="previewSpinner" destination="dfK-mw-Kcn" id="Duz-r8-4aL"/>
+                        <outlet property="renderIndicator" destination="7LB-tg-yEZ" id="HvC-Tr-0G0"/>
+                        <outlet property="renderLabel" destination="t1O-gM-eVc" id="mrL-oU-NiH"/>
                         <outlet property="sliderCell" destination="Gf9-ti-cEh" id="vdQ-OP-UXi"/>
+                        <outlet property="statusLabel" destination="bxO-8L-h4e" id="Ue2-mn-Ye4"/>
                         <outlet property="timelineSlider" destination="JcC-on-RAs" id="fgr-XP-FM4"/>
                     </connections>
                 </viewController>

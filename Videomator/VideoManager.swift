@@ -11,10 +11,19 @@ import AVKit
 
 public class VideoManager {
     
-    private var videoURL: URL
+    private var videoURL: URL {
+        didSet {
+            self.asset = AVURLAsset(url: self.videoURL)
+            self.generator = AVAssetImageGenerator(asset: self.asset)
+            self.generator.requestedTimeToleranceBefore = .zero
+            self.generator.requestedTimeToleranceAfter = .zero
+        }
+    }
     private var blurer: BlurerWrapper
     private lazy var asset = AVURLAsset(url: self.videoURL)
     private lazy var generator = AVAssetImageGenerator(asset: self.asset)
+    private var binder: DispatchWorkItem?
+    private var progressBinder = DispatchQueue(label: "progress")
     
     public var fps: Int {
         self.blurer.getFps()
@@ -38,8 +47,35 @@ public class VideoManager {
         self.blurer.startRender()
     }
     
+    public func bindProgress(onUpdate: @escaping (Int) -> Void) {
+        self.binder?.cancel()
+        self.binder = DispatchWorkItem {
+            while true {
+                let progress = self.blurer.numberOfRendered() * 100
+                onUpdate(Int(progress.rounded()))
+                sleep(3)
+            }
+        }
+        self.progressBinder.async(execute: binder!)
+    }
+    
+    
+    
+    public func reloadVideo(url: URL) {
+        self.videoURL = url
+        self.blurer.load(url.path)
+        self.blurer.startRender()
+    }
+    
     public func render(value: Double, onUpdate: @escaping (NSImage) -> Void) {
-        let frameIndex = Int(Float(value) * Float(self.blurer.getFrameCount()) / 100)
+        var frameIndex = Int(Float(value) * Float(self.blurer.getFrameCount()) / 100)
+        
+        if frameIndex >= self.blurer.getFrameCount() {
+            frameIndex = self.blurer.getFrameCount() - 2
+        } else if frameIndex < 1 {
+            frameIndex = 1
+        }
+        
         self.blurer.createStream(frameIndex)
         print("stream start playing at frame: \(frameIndex)")
         DispatchQueue.global(qos: .userInteractive).async {
@@ -58,10 +94,8 @@ public class VideoManager {
         }
     }
     
-    public func saveRendered(in directory: URL, as name: String) {
-        var savePath = directory
-        savePath.appendPathComponent(name)
-        self.blurer.saveRendered(savePath.path)
+    public func saveRendered(in directory: URL) {
+        self.blurer.saveRendered(directory.path)
     }
     
 }

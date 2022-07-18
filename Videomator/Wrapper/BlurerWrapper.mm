@@ -52,6 +52,10 @@
     _blurer->create_stream((int)frameIndex);
 }
 
+- (float) numberOfRendered {
+    return _blurer->rendering_progress();
+}
+
 - (void) playStream: (NSInteger) fps {
     int videoFps = (int)(fps > 0) ? (int)fps : _blurer->get_fps();
     _blurer->play_stream(videoFps);
@@ -66,21 +70,12 @@
     if (data.data == nullptr) {
         return NULL;
     }
-    
-    int len = (data.width - 1) * data.height * 3 + (data.height - 1) * 3 + (3 - 1);
-    char * byteArray = new char[len];
-    for (size_t i = 0; i < len; i += 3)
-    {
-        byteArray[i] = data.data[i + 2];
-        byteArray[i + 1] = data.data[i + 1];
-        byteArray[i + 2] = data.data[i];
-    }
-    
+
     const int bytesPerRow = data.width * 3;
     const unsigned int channels = 3;
     
     NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc]
-                                initWithBitmapDataPlanes:(unsigned char **)&byteArray
+                                initWithBitmapDataPlanes:(unsigned char **)&data.data
                                 pixelsWide:data.width
                                 pixelsHigh:data.height
                                 bitsPerSample:8

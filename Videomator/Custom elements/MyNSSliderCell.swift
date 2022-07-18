@@ -30,6 +30,10 @@ class MyNSSliderCell: NSSliderCell {
     //MARK: - Initializers
     override init() {
         super.init()
+        let layer = CALayer()
+        layer.cornerRadius = 5
+        self.controlView?.wantsLayer = true
+        self.controlView?.layer = layer
     }
     
     required init(coder: NSCoder) {
@@ -101,15 +105,4 @@ class MyNSSliderCell: NSSliderCell {
         return path
     }
     
-}
-
-extension MyNSSliderCell {
-    public func setShadow() {
-        self.controlView?.shadow = NSShadow()
-        self.controlView?.layer?.cornerRadius = 5.0
-        self.controlView?.layer?.shadowOpacity = 1.0
-        self.controlView?.layer?.shadowColor = NSColor.black.cgColor
-        self.controlView?.layer?.shadowOffset = NSMakeSize(0, 0)
-        self.controlView?.layer?.shadowRadius = 20
-    }
 }
