@@ -753,16 +753,8 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxO-8L-h4e">
-                                        <rect key="frame" x="565" y="705" width="52" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Preview" id="CkX-8V-MMq">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-Qd-pS9">
-                                        <rect key="frame" x="0.0" y="87" width="1182" height="591"/>
+                                        <rect key="frame" x="0.0" y="109" width="1182" height="591"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="W8j-Qd-pS9" secondAttribute="height" multiplier="18/9" id="7Kd-Xj-Lqd"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="900" id="cAj-Lt-kP6"/>
@@ -788,10 +780,8 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
-                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -850,7 +840,6 @@
                         <outlet property="renderIndicator" destination="7LB-tg-yEZ" id="HvC-Tr-0G0"/>
                         <outlet property="renderLabel" destination="t1O-gM-eVc" id="mrL-oU-NiH"/>
                         <outlet property="sliderCell" destination="Gf9-ti-cEh" id="vdQ-OP-UXi"/>
-                        <outlet property="statusLabel" destination="bxO-8L-h4e" id="Ue2-mn-Ye4"/>
                         <outlet property="timelineSlider" destination="JcC-on-RAs" id="fgr-XP-FM4"/>
                     </connections>
                 </viewController>

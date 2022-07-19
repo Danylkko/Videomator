@@ -21,7 +21,7 @@ class MainViewController: NSViewController {
     @IBOutlet weak var renderIndicator: NSProgressIndicator!
     @IBOutlet weak var renderLabel: NSTextField!
     @IBOutlet weak var backgroundEffect: NSVisualEffectView!
-    @IBOutlet weak var statusLabel: NSTextField!
+    
     
     //MARK: - Other properties
     private var manager: VideoManager?
@@ -44,11 +44,6 @@ class MainViewController: NSViewController {
         self.renderLabel.stringValue = "0% rendered"
         self.renderIndicator.doubleValue = 0
         self.sliderCell.isEnabled = false
-    }
-    
-    private func isPreview(_ status: Bool) {
-        self.statusLabel.stringValue = status ? "Preview" : "Rendered"
-        self.statusLabel.textColor = status ? NSColor.red : NSColor.controlColor
     }
     
     private func bindUI() {
