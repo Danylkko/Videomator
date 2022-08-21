@@ -1,4 +1,3 @@
-[submodule "final_core"]
-	path = final_core
-	url = git@gitlab.com:skylum/internship_2022_1/cpp/osadchiy/final_core.git
-	branch = dev
+[submodule "Videomator_core"]
+	path = Videomator_core
+	url = git@github.com:Danylkko/Videomator_core.git
